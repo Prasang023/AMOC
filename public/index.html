@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="with=device-width, initial-scale=1.0" />
+    <title>Sahyog</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karantina&family=Poppins:wght@200;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+      }
+      .header {
+        min-height: 100vh;
+        width: 100%;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4)
+          ),
+          url(https://api.hub.jhu.edu/factory/sites/default/files/styles/soft_crop_2400/public/dog-pet.jpg?itok=SDt4Pqx7);
+        background-position: center;
+        background-size: cover;
+        position: relative;
+      }
+      nav {
+        display: flex;
+        padding: 1% 6%;
+        justify-content: space-between;
+        align-items: center;
+      }
+      nav img {
+        width: 80px;
+      }
+      .nav-links {
+        flex: 1;
+        text-align: right;
+        cursor: pointer;
+      }
+      .nav-links ul li {
+        list-style: none;
+        display: inline-block;
+        padding: 8px 12px;
+        position: relative;
+      }
+      .nav-links ul li a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 13px;
+      }
+      .nav-links ul li::after {
+        content: "";
+        width: 0%;
+        height: 2px;
+        background: linear-gradient(to right, #dfff00, #adff2f);
+        display: block;
+        margin: auto;
+        transition: 0.5s;
+      }
+      .nav-links ul li:hover::after {
+        width: 100%;
+      }
+      .text-box {
+        width: 90%;
+        color: #ffffff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      .text-box h1 {
+        margin: 0 0 450px;
+        font-size: 80px;
+      }
+      .text-box p {
+        margin: 10px 0 40px;
+        font-size: 18px;
+        color: #ffffff;
+      }
+      .hero-btn {
+        display: inline-block;
+        text-decoration: none;
+        color: #ffffff;
+        border: 1px solid #ffffff;
+        padding: 12px 34px;
+        font-size: 18px;
+        background: transparent;
+        position: relative;
+        cursor: pointer;
+        
+      }
+      .hero-btn:hover {
+        border: 1px solid #4169e1;
+        background: #4169e1;
+        transition: 1s;
+      }
+      .maindiv {
+        width: 40%;
+        height: 400px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background-image: url(https://www.pbs.org/wgbh/nova/media/images/iStock-473012660.width-1500.jpg);
+        background-size: 100% 100%;
+        box-shadow: 1px 2px 10px 5px #ffffff;
+        animation: slider 20s infinite linear;
+      }
+      @keyframes slider {
+        0% {
+          background-image: url(https://www.pbs.org/wgbh/nova/media/images/iStock-473012660.width-1500.jpg);
+        }
+        25% {
+          background-image: url(https://www.wagr.in/blog/wp-content/uploads/2019/03/anoir-chafik-37957-unsplash.jpg);
+        }
+        50% {
+          background-image: url(https://i.ytimg.com/vi/D-ABiH-9Zd8/maxresdefault.jpg);
+        }
+        75% {
+          background-image: url(https://i.insider.com/5b10188e5e48ec18078b45ac?width=700);
+        }
+      }
+      nav .fa {
+        display: none;
+      }
+      @media (max-width: 700px) {
+        .text-box h1 {
+          font-size: 30px;
+          padding: 0 20px;
+        }
+        .nav-links ul li {
+          display: block;
+        }
+        .nav-links {
+          position: absolute;
+          background: #4169e1;
+          height: 100vh;
+          width: 200px;
+          top: 0;
+          right: -200px;
+          text-align: left;
+          z-index: 2;
+          transition: 1s;
+        }
+        nav .fa {
+          display: block;
+          color: #ffffff;
+          margin: 10px;
+          font-size: 22px;
+          cursor: pointer;
+        }
+        .nav-links ul {
+          padding: 30px;
+        }
+        .maindiv {
+          width: 200px;
+          height: 200px;
+        }
+      }
+      /*------------------Sectors-----------*/
+
+      .row {
+        margin-top: 5%;
+        display: flex;
+        justify-content: space-between;
+      }
+      .sectors {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        padding-top: 50px;
+      }
+      .sectors-col {
+        flex-basis: 32%;
+        border-radius: 20px;
+        margin-bottom: 30px;
+        position: relative;
+        overflow: hidden;
+      }
+      .sectors-col img {
+        width: 100%;
+        display: block;
+      }
+      .layer {
+        background: transparent;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 0.5s;
+      }
+      .layer:hover {
+        background: rgba(226, 0, 0, 0.7);
+      }
+      .layer h3 {
+        width: 100%;
+        font-weight: 500;
+        color: #ffffff;
+        font-size: 23px;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        opacity: 0;
+        transition: 0.5s;
+      }
+      .layer:hover h3 {
+        bottom: 49%;
+        opacity: 1;
+      }
+      @media (max-width: 700px) {
+        .row {
+          flex-direction: column;
+        }
+      }
+      /*------------Our Motive-------*/
+      .Motive {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        padding-top: 100px;
+      }
+      .Motive-col {
+        flex-basis: 31%;
+        border-radius: 10px;
+        margin-bottom: 5%;
+        text-align: left;
+      }
+      .Motive-col img {
+        width: 100%;
+        height: 390px;
+        border-radius: 10px;
+      }
+      .Motive-col p {
+        padding: 0;
+      }
+      .Motive-col h3 {
+        margin-top: 16px;
+        margin-bottom: 15px;
+        text-align: left;
+      }
+      /*------------call to action---------------*/
+
+      .cta {
+        margin: 100px auto;
+        width: 80%;
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.7),
+            rgba(0, 0, 0, 0.7)
+          ),
+          url(https://akm-img-a-in.tosshub.com/indiatoday/images/story/201603/animals-story,-fb_647_031916013853.jpg);
+        background-position: center;
+        background-size: cover;
+        border-radius: 10px;
+        text-align: center;
+        padding: 100px 0;
+      }
+      .cta h1 {
+        color: #ffffff;
+        margin-bottom: 40px;
+        padding: 0;
+      }
+      @media (max-width: 700px) {
+        .cta h1 {
+          font-size: 24px;
+        }
+      }
+      /*------------call to action---------------*/
+      .footer {
+        width: 100%;
+        text-align: center;
+        padding: 30px 0;
+      }
+      .footer h4 {
+        margin-bottom: 25px;
+        margin-top: 20px;
+        font-weight: 600;
+      }
+      .icons .fa {
+        color: #87cefa;
+        margin: 0 13px;
+        cursor: pointer;
+        padding: 18px 0;
+      }
+      .fa-heart-o {
+        color: #a83f39;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="header">
+      <nav>
+        <a href="/"
+          ><img
+            src="https://iconfair.com/cepsools/2020/08/38-AiredaleDog-image-vector-icon.png"
+        /></a>
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-times" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="/">HOME</a></li>
+            <li><a href="/aboutus">ABOUT</a></li>
+            <li><a href="/adopt">ADOPT</a></li>
+            <li><a href="/report">REPORT</a></li>
+            <li><a href="/contactus">CONTACT</a></li>
+          </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+      </nav>
+      <div class="maindiv">
+        <div class="text-box">
+          <h1>Sahyog</h1>
+          <p>
+            Hand For Stray Animals <br />
+            Help Your Friend To Be Safe And Get A Sweet Loving Home
+          </p>
+          <a href="/aboutus" class="hero-btn"
+            >Know More About Us</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-------------------------Our Sectors----------------->
+
+    <section class="sectors">
+      <h1>Our Sectors</h1>
+      <p>Here Are Some Information and Facility We Provide</p>
+      <div class="row">
+        <div class="sectors-col">
+          <img
+            src="https://media.istockphoto.com/vectors/animal-cruelty-free-icon-design-with-rabbit-vector-badge-symbol-vector-id618977892?b=1&k=6&m=618977892&s=612x612&w=0&h=_ELSnyIu7z6As9NZnO8Im9dd6uweAnAK1wFfnSH-ST4="
+          />
+          <div class="layer">
+            <a href="animalabuse"><h3>Animal Abuse</h3></a>
+          </div>
+        </div>
+        <div class="sectors-col">
+          <img
+            src="https://image.freepik.com/free-vector/puppy-injury-splinting-leg-vector-illustration_7242-32.jpg"
+          />
+          <div class="layer">
+            <a href="animalinjury"><h3>Animal Injury</h3></a>
+          </div>
+        </div>
+        <div class="sectors-col">
+          <img
+            src="data:image/png;base64,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"
+          />
+          <div class="layer">
+            <a href="/adopt"><h3>Animal Ready For Adoption</h3></a>
+          </div>
+        </div>
+        <div class="sectors-col">
+          <img
+            src="https://i.pinimg.com/originals/d7/e6/fe/d7e6fe6c4e540f6468d8638f5008c1d9.jpg"
+          />
+          <div class="layer">
+            <a href="/NGO"><h3>Animal NGO</h3></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!------------------Our Motive----------->
+    <section class="Motive">
+      <h1>Our Motive</h1>
+      <p>
+        Our Motive Is That Every Animal In This World Should Be Healthy, Happy
+        and Save. Live Their Life As Their Own Will
+      </p>
+      <div class="row">
+        <div class="Motive-col">
+          <img
+            src="https://www.morroccomethod.com/blog/wp-content/uploads/2017/05/happypets1-300x278-300x278.jpg"
+          />
+          <h3>Healthy Animals</h3>
+          <p>
+            Animal behavior is a significant factor in deter- mining an animal's
+            health. Normal animal behavior includes an animal who stays with the
+            herd, eyes are bright, nose moist without discharge, no wounds, and
+            is eating normally.
+          </p>
+        </div>
+        <div class="Motive-col">
+          <img
+            src="https://i.pinimg.com/originals/40/93/23/4093235bfbb56345b1f121e276a70604.jpg"
+          />
+          <h3>Happy Animals</h3>
+          <p>
+            <b>Why To Keep Animals Happy?</b><br />
+            The is simple, we all know that if we keep others happy, share our
+            happiness it indirectly make us feel happy too the reason is simple
+            happiness multiply when it is been shared
+          </p>
+        </div>
+        <div class="Motive-col">
+          <img
+            src="https://images-na.ssl-images-amazon.com/images/I/61dkLJEZkOL._SL1201_.jpg"
+          />
+          <h3>Save Animals</h3>
+          <p>
+            <b>Why To Save Animals?</b><br />
+            For maintaining a healthy ecological balance on this earth, animals,
+            plants and marine species are as important as humans. Each organism
+            on this earth has a unique place in food chain that helps contribute
+            to the ecosystem in its own special way.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-----------------Call To Action--------->
+    <section class="cta">
+      <h1>Join Us For Help The Animal Who Needs Us</h1>
+      <a href="/contactus" class="hero-btn">CONTACT US</a>
+    </section>
+
+    <!-----------------Call To Action--------->
+    <section class="footer">
+      <h4>About Us</h4>
+      <p>
+        Stray Animals, don't know how they used to get separated from their
+        family, But we the the Team Krypto Knights present you Project Sahyog
+        where we<br />
+        try to help the stray animals, safety, return animal to their rightful
+        owners if lost and through our website we try to contact Several NGOs
+        who work for the<br />
+        welfare of the Stray Animals.<br />
+        <b
+          >This Websit is Developed by:<br />
+          Astik Mehta<br />
+          Richard Tirkey<br />
+          Prasang Maheshwari</b
+        ><br /><br /><br />
+      </p>
+      <div class="icons">
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-linkedin"></i>
+      </div>
+      <p>
+        Made With <i class="fa fa-heart-o"></i> By Student Of IIIT Surat, CSE
+        Branch, Batch 2020
+      </p>
+    </section>
+    <!--------------JavaScript for Toggle Menu------------->
+    <script>
+      var navLinks = document.getElementById("navLinks");
+      function showMenu() {
+        navLinks.style.right = "0";
+      }
+      function hideMenu() {
+        navLinks.style.right = "-200px";
+      }
+    </script>
+  </body>
+</html>

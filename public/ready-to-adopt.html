@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="with=device-width, initial-scale=1.0">
+        <title>Ready Adopt</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Karantina&family=Poppins:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> 
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                font-family: 'Poppins', sans-serif;
+            }
+            .header{
+                min-height: 100vh;
+                width: 100%;
+                background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://api.hub.jhu.edu/factory/sites/default/files/styles/soft_crop_2400/public/dog-pet.jpg?itok=SDt4Pqx7);
+                background-position: center;
+                background-size: cover;
+                position: relative;
+            }
+            nav{
+                display: flex;
+                padding: 2% 6%;
+                justify-content: space-between;
+                align-items: center;
+            }
+            nav img{
+                width: 80px;
+            }
+            .nav-links{
+                flex: 1;
+                text-align: right;
+                cursor: pointer;
+            }
+            .nav-links ul li{
+                list-style: none;
+                display: inline-block;
+                padding: 8px 12px;
+                position: relative;
+            }
+            .nav-links ul li a{
+               color: #ffffff;
+               text-decoration: none;
+               font-size: 13px; 
+            }
+            .nav-links ul li::after{
+                content: '';
+                width: 0%;
+                height: 2px;
+                background: linear-gradient(to right, #dfff00, #adff2f);
+                display: block;
+                margin: auto;
+                transition: 0.5s;
+            }
+            .nav-links ul li:hover::after{
+                width: 100%;
+            }
+            .text-box{
+                width: 90%;
+                color: #ffffff;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+            }
+            .text-box h1{
+                margin: 0 0 450px ;
+                font-size: 80px;
+            }
+            .text-box p{
+                margin: 10px 0 40px;
+                font-size: 18px;
+                color: #ffffff;
+            }
+            .hero-btn{
+                display: inline-block;
+                text-decoration: none;
+                color: #ffffff;
+                border: 1px solid #ffffff;
+                padding: 12px 34px;
+                font-size: 18px;
+                background: transparent;
+                position: relative;
+                cursor: pointer;
+            }
+            .hero-btn:hover{
+                border: 1px solid #4169E1;
+                background: #4169E1;
+                transition: 1s;
+            }
+            .maindiv{
+                width: 40%;
+                height: 400px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                background-image: url(https://www.pbs.org/wgbh/nova/media/images/iStock-473012660.width-1500.jpg);
+                background-size: 100% 100%;
+                box-shadow: 1px 2px 10px 5px #ffffff;
+                animation: slider 20s infinite linear;
+            }
+            @keyframes slider{
+                0%{background-image: url(https://www.pbs.org/wgbh/nova/media/images/iStock-473012660.width-1500.jpg);}
+                25%{background-image: url(https://www.wagr.in/blog/wp-content/uploads/2019/03/anoir-chafik-37957-unsplash.jpg);}
+                50%{background-image: url(https://i.ytimg.com/vi/D-ABiH-9Zd8/maxresdefault.jpg);}
+                75%{background-image: url(https://i.insider.com/5b10188e5e48ec18078b45ac?width=700);}
+            }
+            nav .fa{
+                display: none;
+            }
+            @media(max-width: 700px) {
+                .text-box h1{
+                    font-size: 30px;
+                }
+                .nav-links ul li{
+                    display: block;
+                }
+                .nav-links{
+                    position: fixed;
+                    background: #4169E1;
+                    height: 100vh;
+                    width: 200px;
+                    top: 0;
+                    right: -200px;
+                    text-align: left;
+                    z-index: 2;
+                    transition: 1s;
+                }
+                nav .fa{
+                    display: block;
+                    color: #ffffff;
+                    margin: 10px;
+                    font-size: 22px;
+                    cursor: pointer;
+                }
+                .nav-links ul{
+                    padding: 30px;
+                }
+                .maindiv{
+                    width: 200px;
+                    height: 200px;
+                }
+            }
+            /*------------------Sectors-----------*/
+
+            .row{
+                margin-top: 5%;
+                display: flex;
+                justify-content: space-between;
+            }
+            .sectors{
+                width: 80%;
+                margin: auto;
+                text-align: center;
+                padding-top: 50px;
+            }
+            .sectors-col{
+                flex-basis: 32%;
+                border-radius: 20px;
+                margin-bottom: 30px;
+                position: relative;
+                overflow: hidden;
+            }
+            .sectors-col img{
+                width: 100%;
+                display: block;
+            }
+            .layer{
+                background: transparent;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                transition: 0.5s;
+            }
+            .layer:hover{
+                background: rgba(226, 0, 0, 0.7);
+            }
+            .layer h3{
+                width: 100%;
+                font-weight: 500;
+                color: #ffffff;
+                font-size: 23px;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                position: absolute;
+                opacity: 0;
+                transition: 0.5s;
+            }
+            .layer:hover h3{
+                bottom: 49%;
+                opacity: 1;
+            }
+            @media(max-width: 700px){
+                .row{
+                    flex-direction: column;
+                }
+            }
+            /*------------Our Motive-------*/
+            .Motive{
+                width: 80%;
+                margin: auto;
+                text-align: center;
+                padding-top: 100px;
+            }
+            .Motive-col{
+                flex-basis: 31%;
+                border-radius: 10px;
+                margin-bottom: 5%;
+                text-align: left;
+            }
+            .Motive-col img{
+                width: 100%;
+                border-radius: 10px;
+            }
+            .Motive-col p{
+                padding: 0;
+            }
+            .Motive-col h3{
+                margin-top: 16px;
+                margin-bottom: 15px;
+                text-align: left;
+            }
+            /*------------call to action---------------*/
+
+            .cta{
+                margin: 100px auto;
+                width: 80%;
+                background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(https://api.time.com/wp-content/uploads/2017/01/cute-animal-tweet-off-zoo.jpg);
+                background-position: center;
+                background-size: cover;
+                border-radius: 10px;
+                text-align: center;
+                padding: 100px 0;
+            }
+            .cta h1{
+                color: #ffffff;
+                margin-bottom: 40px;
+                padding: 0;
+            }
+            @media(max-width: 700px){
+                .cta h1{
+                    font-size: 24px;
+                }
+            }
+            /*------------call to action---------------*/
+            .footer{
+                width: 100%;
+                text-align: center;
+                padding: 30px 0;
+            }
+            .footer h4{
+                margin-bottom: 25px;
+                margin-top: 20px;
+                font-weight: 600;
+            }
+            .icons .fa{
+                color: #87CEFA;
+                margin: 0 13px;
+                cursor: pointer;
+                padding: 18px 0;
+            }
+            .fa-heart-o{
+                color: #a83f39;
+            }
+            /*--------------sub-header------------*/
+
+            .sub-header{
+                height: 50vh;
+                width: 100%;
+                background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,07)),url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR09Y_hAuax4ZUa1pH93_cBWaBpcVqMtpw-ag&usqp=CAU);
+                background-position: center;
+                background-size: cover;
+                text-align: center;
+                color: #ffffff;
+            }
+            .sub-header h1{
+                margin-top: 100px;
+                font-size: 46px;
+            }
+            .about-us{
+                width: 80%;
+                margin: auto;
+                padding-top: 80px;
+                padding-bottom: 50px;
+            }
+            .about-col{
+                flex-basis: 48%;
+                padding: 30px 2px;
+            }
+            .about-col img{
+                width: 60%;
+                height: 100%;
+            }
+            .about-col h1{
+                padding: 0;
+            }
+            .about-col p{
+                padding: 15px 0 25px;
+            }
+            /*--------------Contact-Us------------*/
+            .contact-us{
+                width: 80%;
+                
+                margin: auto;
+            }
+            .contact-col{
+                flex-basis: 48%;
+                margin-bottom: 30px;
+            }
+            .contact-col div{
+                display: flex;
+                align-items: center;
+                margin-bottom: 0px;
+            }
+            .contact-col div .fa{
+                font-size: 28px;
+                color: #4169E1;
+                margin: 10px;
+                margin-right: 30px;
+            }
+            .contact-col div p{
+                padding: 0;
+            }
+            .contact-col div h5{
+                font-size: 15px;
+                margin-bottom: 5px;
+                color: #000;
+                font-weight: 400;
+            }
+            .contact-col input, .contact-col textarea{
+                width: 100%;
+                padding: 15px;
+                margin-bottom: 17px;
+                outline: none;
+                border: 1px solid #000;
+                box-sizing: border-box;
+            }
+            .red-btn{
+                border: 1px solid #002366;
+                background:transparent;
+                color: #002366;
+            }
+
+            
+            #special{
+                margin: 10px ;
+                background-color: aquamarine;
+            }
+
+            #special:hover{
+                background-color: #4169E1;
+                transition-duration: 0.5s;
+                
+            }
+
+            #speimg{
+                border: black;
+                border-width: 1px;
+                box-shadow: 1px 2px 10px 5px #000000;
+                margin: 10px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <section class="sub-header">
+            <nav>
+                <a href="/"><img src="https://iconfair.com/cepsools/2020/08/38-AiredaleDog-image-vector-icon.png"></a>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="/">HOME</a></li>
+            <li><a href="/aboutus">ABOUT</a></li>
+            <li><a href="/adopt">ADOPT</a></li>
+            <li><a href="/report">REPORT</a></li>
+            <li><a href="/contactus">CONTACT</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+            <h1> Animal Ready For Adoption</h1>
+        </section>
+        <!-----------------Contact-us--------->
+        <section class="contact-us">
+            <div class="sector-row">
+                <div class="contact-col">
+                <div>
+                    <span><br><br><h1>Animal 1</h1>
+                        <img id="speimg" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBZX8cksGB6XLw0qqnK4lY6eWeVdb52Uv0GLd_teOP8QXGRvtexwuBCluTnq1ylM3krnw&usqp=CAU" width="400px" height="300px"/>
+                    <h4>Ravi Kohli</h4>
+                    <li>For Call-9967456040</li>
+                    <li>For WhatsApp-9967456040</li>
+                    <li>Everyday In A Week, 8AM to 9PM</li>
+                    <li>rameshmodi1697@gmail.com</li>
+                    <li>ABC Road, PQR Building,Mumbai, Maharastra, INDIA.</li>
+                    <li>Its a cat, white paws, some brown strip and golden fur</li>
+                    <div><a href="/adoptform"><button type="submit" class="hero-btn red-btn" id="special">Adopt</button></a></div>  
+                    </span>
+                </div><br><br>
+                <div>
+                    <span><h1>Animal 2</h1>
+                        <img id="speimg" src="https://scitechdaily.com/images/Stray-Dog-Dirty-Street.jpg" width="400px" height="300px"/>
+                    <h4>Akhil Solanki</h4>
+                    <li>For Call-9452789516</li>
+                    <li>For WhatsApp-7452146938</li>
+                    <li>Everyday In A Week, 10AM to 7PM</li>
+                    <li>Akhil7@gmail.com</li>
+                    <li>EFG Road, XYZ Building,Surat, Gujrat, INDIA.</li>
+                    <li>It is a Dog with brown fur black tale<br> and white paws</li>
+                    <div><a href="/adoptform"><button type="submit" class="hero-btn red-btn" id="special">Adopt</button></a></div>     
+                </span>
+                
+                </div><br><br>
+                <div>
+                    <span><h1>Animal 3</h1>
+                        <img id="speimg" src="data:image/jpeg;base64,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" width="400px" height="300px"/>
+                    <h4>Sonya Yadav</h4>
+                    <li>For Call-94524863703</li>
+                    <li>For WhatsApp-7446874654</li>
+                    <li>Everyday In A Week, 7AM to 11PM</li>
+                    <li>misscutie07@gmail.com</li>
+                    <li>Sarojini Nagar, Tulip Building,Surat, Delhi, INDIA.</li>
+                    <li>Its A Kitty, with golden shade eye and<br>full white fur</li>
+                    <div><a href="/adoptform"><button type="submit" class="hero-btn red-btn" id="special">Adopt</button></a></div>  
+                    </span>
+                </div><br><br>
+                <div>
+                    <span><h1>Animal 4</h1>
+                        <img id="speimg" src="https://cf.ltkcdn.net/cats/images/orig/245057-2048x1360-stray-cat.jpg" width="400px" height="300px"/>
+                    <h4>Manisha Kumar</h4>
+                    <li>For Call-7748591425</li>
+                    <li>For WhatsApp-7765142973</li>
+                    <li>Everyday In A Week, 9AM to 9PM</li>
+                    <li>manishakumar76@gmail.com</li>
+                    <li>HIJ Road,LMN Building, Ranchi, Jharkhand INDIA.</li>
+                    <li>It is a Dog with full Golden fur</li>
+                    <div><a href="/adoptform"><button type="submit" class="hero-btn red-btn" id="special">Adopt</button></a></div>  
+                    </span>
+                </div><br><br>
+                </div>
+            </div>
+
+        </section>
+
+        <!-----------------Footer--------->
+        <section class="footer">
+            <h4>About Us</h4>
+            <p>Stray Animals, don't know how they used to get separated from their family, But we the the Team Krypto Knights present you Project Sahyog where we<br> try to help the stray animals, safety, return animal to their rightful owners if lost and through our website we try to contact Several NGOs who work for the<br> welfare of the Stray Animals.<br>
+                <b>This Websit is Developed by:<br>
+               Astik Mehta<br>
+               Richard Tirkey<br>
+               Prasang Maheshwari</b><br><br><br></p>
+               <div class="icons">
+                   <i class="fa fa-facebook"></i>
+                   <i class="fa fa-twitter"></i>
+                   <i class="fa fa-instagram"></i>
+                   <i class="fa fa-linkedin"></i>
+               </div>
+               <p>Made With <i class="fa fa-heart-o"></i> By Student Of IIIT Surat, CSE Branch, Batch 2020</p>
+        </section>
+        <!--------------JavaScript for Toggle Menu------------->
+        <script>
+
+            var navLinks = document.getElementById("navLinks");
+            function showMenu(){
+                navLinks.style.right = "0";
+            }
+            function hideMenu(){
+                navLinks.style.right = "-200px";
+            }
+
+        </script>
+    </body>
+</html>
