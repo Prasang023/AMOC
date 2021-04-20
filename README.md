@@ -1,6 +1,7 @@
 ------ABOUT------
 
 Hello everyone! We are team "Krypto Knights" and as a submission for AMOC (A month long challege for development), we have created this website named "Sahyog" which helps homeless and helpless stray animals find a shelter and stay safe. "Sahyog" is a animal help website where anyone ka report about any homeless stray animal and any other person can connect through the means of website to adopt that animal. This website also aims to spread awareness among the people about animal abuse and help them connect to various animal help NGOs in order to help stray Animals. This website is developed by a team of three  undergraduate students at Indian Institute of Information Technology, Surat which includes Prasang Maheshwari, Richard Tirkey and Astik Mehta.
+You can visit the website at: https://lit-lake-75487.herokuapp.com/
 
 ------INSTALLATION AND USAGE------
 
